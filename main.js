@@ -15,14 +15,20 @@ camera.position.setZ(30);
 
 renderer.render(scene, camera);
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+// const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
 const material = new THREE.MeshBasicMaterial({ color: 0xD68C27, wireframe: true});
-const torus = new THREE.Mesh(geometry, material);
+const geometry = new THREE.TorusGeometry(10, 1, 16, 100);
+const torus1 = new THREE.Mesh(geometry, material);
 
-scene.add(torus);
+const geometry2 = new THREE.TorusGeometry(12, 1, 16, 100);
+const torus2 = new THREE.Mesh(geometry2, material);
+
+
+scene.add(torus1);
+scene.add(torus2);
 const controls = new OrbitControls(camera, renderer.domElement);
 
-const myTexture = new THREE.TextureLoader().load('backgroundImg.png');
+const myTexture = new THREE.TextureLoader().load('backgroundImg3.png');
 
 const myMesh = new THREE.Mesh(
   new THREE.BoxGeometry(9,9,9),
@@ -33,12 +39,13 @@ scene.add(myMesh);
 
 function animate() {
   requestAnimationFrame(animate);
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.01;
-  myMesh.rotation.x += 0.003;
-  myMesh.rotation.y += 0.002;
-  myMesh.rotation.z += 0.003;
+  torus1.rotation.x += 0.005;
+  torus1.rotation.y += 0.0025;
+  torus1.rotation.z += 0.005;
+  torus2.rotation.x += 0.0025;
+  torus2.rotation.y += 0.005;
+  torus2.rotation.z += 0.0025;
+  myMesh.rotation.y += 0.0025
   controls.update();
   renderer.render(scene, camera);
 }
