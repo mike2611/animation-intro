@@ -3,7 +3,7 @@
 > This project is a simple animation showing in a cube my name and the sentence "Full-stack developer" and this cube is surrounded by two torus geometries. This project was made using [Three.js](https://threejs.org/)
 
 ## Desktop 💻
-![screenshot](desktopImage.png)
+![screenshot](animation.gif)
 
 
 ## Mobile 📱
